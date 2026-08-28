@@ -1,0 +1,31 @@
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, 'Segoe UI', system-ui, sans-serif;
+  background: #f6f8fb;
+  color: #0f172a;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.MuiPaper-root,
+.MuiCard-root {
+  border-radius: 18px;
+}
