@@ -2,6 +2,20 @@ import { Box, Button, Card, CardActions, CardContent, CardMedia, Typography } fr
 import type { Livre } from "../../models";
 import imgNotFound from "../../assets/imgNotFound.png";
 
+const localCoverUrls = import.meta.glob("../../assets/BooksCover/*", {
+  eager: true,
+  import: "default",
+  query: "?url",
+}) as Record<string, string>;
+
+const coverUrlByBookId = Object.fromEntries(
+  Object.entries(localCoverUrls).map(([path, url]) => {
+    const filename = path.split("/").pop() ?? "";
+    const bookId = filename.replace(/\.[^.]+$/, "");
+    return [bookId, url];
+  })
+);
+
 const truncateText = (text: string, max = 120) =>
   text.length > max ? `${text.slice(0, max).trimEnd()}…` : text;
 
@@ -14,7 +28,7 @@ export function BookCard({
 }) {
   const isList = variant === "list";
   const truncated = truncateText(book.Resume, isList ? 110 : 90);
-  const imageUrl = book.LienImage || imgNotFound;
+  const imageUrl = coverUrlByBookId[book.id] || book.LienImage || imgNotFound;
   return (
     <Card
       sx={{
