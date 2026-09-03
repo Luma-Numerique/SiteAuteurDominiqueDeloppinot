@@ -60,7 +60,7 @@ export function BookCard({
         }}
         sx={{
           width: isList ? { xs: "100%", sm: 220 } : "100%",
-          height: isList ? { xs: 220, sm: 180 } : "auto",
+          height: isList ? { xs: 220, sm: 180 } : 320,
           maxHeight: isList ? undefined : 480,
           objectFit: "contain",
           backgroundColor: "#f7fafc",
@@ -71,10 +71,30 @@ export function BookCard({
       />
       <Box sx={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
         <CardContent sx={{ flexGrow: 1, py: 2, px: 3 }}>
-          <Typography variant="h6" gutterBottom sx={{ fontWeight: 700 }}>
+          <Typography
+            variant="h6"
+            gutterBottom
+            sx={{
+              fontWeight: 700,
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: isList ? 2 : 2,
+              overflow: "hidden",
+            }}
+          >
             {book.Titre}
           </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6 }}>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{
+              lineHeight: 1.6,
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: isList ? 3 : 3,
+              overflow: "hidden",
+            }}
+          >
             {truncated}
           </Typography>
         </CardContent>
