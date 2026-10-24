@@ -5,5 +5,5 @@
     "directory": "./dist",
     "not_found_handling": "single-page-application"
   },
-  "previews_enabled": true
+  "previews": {"previews_enabled": true}
 }
