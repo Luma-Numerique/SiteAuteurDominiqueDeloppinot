@@ -9,6 +9,7 @@ import { useLivres } from "../../../utils/livresContext";
 export function Home() {
   const { livres } = useLivres();
   const favoriteList = livres.filter((book) => book.Favorite === true);
+  const listeAnatole = livres.filter((book) => book.Titre.includes("Anatole"));
 
   return (
     <Box sx={{ display: "grid", gap: 4 }}>
@@ -30,16 +31,16 @@ export function Home() {
       </Paper>
 
       <Grid container spacing={4}>
-        <Grid xs={12} md={8}>
+        <Grid size={{ xs: 12, md: 12 }}>
           <CoupDeCoeur favoriteList={favoriteList} />
         </Grid>
-        <Grid xs={12} md={4}>
-          <Anatole />
+        <Grid size={{ xs: 12, md: 6 ,}}>
+          <Anatole listeAnatole={listeAnatole} />
         </Grid>
-        <Grid xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 6}}>
           <Bubba />
         </Grid>
-        <Grid xs={12} md={8}>
+        <Grid size={{ xs: 12, md: 12 }}>
           <NextEvent />
         </Grid>
       </Grid>
