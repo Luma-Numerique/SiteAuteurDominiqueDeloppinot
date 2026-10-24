@@ -11,7 +11,7 @@ export function Footer() {
         padding: 1,
       }}
     >
-      <Typography variant="body2">@Dominique de Lopptinot 2026</Typography>
+      <Typography variant="body2">@Dominique de Lopptinot 2026 merci Abdul</Typography>
     </Box>
 
   );
