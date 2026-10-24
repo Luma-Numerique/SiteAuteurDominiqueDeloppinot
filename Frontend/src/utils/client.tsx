@@ -25,4 +25,3 @@ export const getAllBooks = async (): Promise<Livre[]> => {
 
   return books;
 };
-
