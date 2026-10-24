@@ -14,6 +14,8 @@ export function Home() {
   return (
     <Box sx={{ display: "grid", gap: 4 }}>
       <Paper
+      <Typography variant="h3" component="h1" gutterBottom sx={{ fontWeight: 700 }}>
+        </Typography>
         elevation={0}
         sx={{
           p: { xs: 3, md: 5 },
