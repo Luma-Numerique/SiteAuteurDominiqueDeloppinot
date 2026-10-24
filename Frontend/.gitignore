@@ -48,3 +48,5 @@ coverage
 .npmrc
 package-lock.json
 
+#Wrangler files
+.wrangler/

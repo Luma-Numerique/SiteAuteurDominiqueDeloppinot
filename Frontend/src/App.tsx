@@ -5,6 +5,7 @@ import { Header } from "./component/commons/header";
 import { Home } from "./component/pages/home/home";
 import { Footer } from "./component/commons/footer";
 import { Livres } from "./component/pages/Livres/livres";
+import NotFound from "./component/pages/NotFound";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/livres" element={<Livres />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Container>
         <Box width="100%">

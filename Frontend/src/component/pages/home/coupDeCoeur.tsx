@@ -1,7 +1,7 @@
 import { Card, Typography } from "@mui/material";
 import type { Livre } from "../../../models";
 
-export function CoupDeCoeur( { favoriteList }: { favoriteList: Livre[] } ) {
+export function CoupDeCoeur( {  }: { favoriteList: Livre[] } ) {
   return (
     <Card sx={{ padding:2, height: "200px"}}>
       <Typography variant="h4">Mes Coups de Coeur</Typography>
