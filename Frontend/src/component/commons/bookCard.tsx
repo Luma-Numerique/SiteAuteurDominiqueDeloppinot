@@ -33,7 +33,7 @@ export function BookCard({
     book.Resume,
     isGrid ? 90 : isList ? 350 : 200
   );
-  const imageUrl = coverUrlByBookId[book.id] || book.LienImage || imgNotFound;
+  const imageUrl = coverUrlByBookId[book.id] || imgNotFound;
 
   const cardContent = (
     <Box sx={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
