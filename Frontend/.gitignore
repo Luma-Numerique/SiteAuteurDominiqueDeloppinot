@@ -26,14 +26,9 @@ dist-ssr
 .env.local
 .env.*.local
 
-# Firebase & local secrets
-# Ignorer les dossiers/ fichiers créés par l'émulateur et les clefs locales
-.firebase/
-firebase-debug.log
+# Local service-account secrets
 serviceAccount*.json
 service-account*.json
-google-services.json
-GoogleService-Info.plist
 
 # Vite / React / TypeScript helpers
 # TypeScript build info
