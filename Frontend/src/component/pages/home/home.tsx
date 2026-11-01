@@ -3,14 +3,17 @@ import { CoupDeCoeur } from "./coupDeCoeur";
 import { Bubba } from "./bubba";
 import { Anatole } from "./anatole";
 import { NextEvent } from "./nextEvent";
-import { useLivres } from "../../../utils/livresContext";
+import { useLivres } from "../../../utils/useLivres";
+import { useEffect } from "react";
 
 
 export function Home() {
   const { livres } = useLivres();
   const favoriteList = livres.filter((book) => book.Favorite === true);
   const listeAnatole = livres.filter((book) => book.Titre.includes("Anatole"));
-
+  useEffect(() => {
+    console.log("Livres in Home component:", livres);
+  }, [livres]);
   return (
     <Box sx={{ display: "grid", gap: 4 }}>
       <Paper
