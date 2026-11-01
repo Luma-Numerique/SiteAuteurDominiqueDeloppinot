@@ -3,7 +3,6 @@ export interface Livre {
     Titre: string;
     Resume: string;
     LienPedagogique: string;
-    LienImage: string;
     LienAchat: string;
     Editeur: string;
     Dispo:boolean;
@@ -13,5 +12,4 @@ export interface Livre {
 export interface Animation{
     id?: string | number;
 }
-
 

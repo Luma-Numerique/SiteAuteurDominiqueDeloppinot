@@ -4,16 +4,14 @@ import { Bubba } from "./bubba";
 import { Anatole } from "./anatole";
 import { NextEvent } from "./nextEvent";
 import { useLivres } from "../../../utils/useLivres";
-import { useEffect } from "react";
 
 
 export function Home() {
   const { livres } = useLivres();
   const favoriteList = livres.filter((book) => book.Favorite === true);
   const listeAnatole = livres.filter((book) => book.Titre.includes("Anatole"));
-  useEffect(() => {
-    console.log("Livres in Home component:", livres);
-  }, [livres]);
+  const listeBubba = livres.filter((book) => book.Titre.includes("Bubba"));
+
   return (
     <Box sx={{ display: "grid", gap: 4 }}>
       <Paper
@@ -41,7 +39,7 @@ export function Home() {
           <Anatole listeAnatole={listeAnatole} />
         </Grid>
         <Grid size={{ xs: 12, md: 6}}>
-          <Bubba />
+          <Bubba listeBubba={listeBubba} />
         </Grid>
         <Grid size={{ xs: 12, md: 12 }}>
           <NextEvent />
